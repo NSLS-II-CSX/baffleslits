@@ -1,0 +1,10 @@
+*.bck
+*.swp
+db
+dbd
+as
+bin
+O.*
+envPaths
+*.req
+

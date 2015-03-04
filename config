@@ -1,0 +1,4 @@
+NAME=mc02
+USER=softioc
+PORT=4013
+HOST=xf23id1-ioc1
