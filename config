@@ -1,4 +1,4 @@
-NAME=mc02
+NAME=mc03
 USER=softioc
-PORT=4013
-HOST=xf23id1-ioc1
+PORT=5005
+HOST=xf23id2-ioc1
