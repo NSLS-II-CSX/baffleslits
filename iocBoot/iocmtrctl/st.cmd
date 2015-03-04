@@ -18,7 +18,7 @@ tpmac_registerRecordDeviceDriver(pdbbase)
 # pmacAsynIPConfigure() is a wrapper for drvAsynIPPort::drvAsynIPPortConfigure() and
 # pmacAsynIPPort::pmacAsynIPPortConfigureEos().
 # See pmacAsynIPPort.c
-pmacAsynIPConfigure("P0","xf23id1-mc02:1025")
+pmacAsynIPConfigure("P0","xf23id1-mc03:1025")
 
 # WARNING: a trace-mask of containing 0x10 will TRACE_FLOW (v. noisy!!)
 #asynSetTraceMask("P0",-1,0x9)
@@ -83,12 +83,12 @@ pmacSetCoordIdlePollPeriod(3,2000)
 ## Load record instances
 dbLoadTemplate("db/motor.substitutions")
 dbLoadTemplate("db/motorstatus.substitutions")
-dbLoadRecords("db/pmacStatus.db","SYS=XF:23ID1-CT,PMAC=MC:02,VERSION=1,PLC=5,PORT=P0,NAXES=8")
+dbLoadRecords("db/pmacStatus.db","SYS=XF:23ID2-CT,PMAC=MC:03,VERSION=1,PLC=5,PORT=P0,NAXES=8")
 dbLoadTemplate("db/pmac_asyn_motor.substitutions")
 dbLoadTemplate("db/autohome.substitutions")
 dbLoadTemplate("db/cs.substitutions")
-dbLoadRecords("db/asynComm.db","P=XF:23ID1-CT{MC:02},PORT=P0,ADDR=0")
-dbLoadRecords("db/iocAdminSoft.db","IOC=XF:23ID1-CT{IOC:MC02}")
+dbLoadRecords("db/asynComm.db","P=XF:23ID2-CT{MC:03},PORT=P0,ADDR=0")
+dbLoadRecords("db/iocAdminSoft.db","IOC=XF:23ID2-CT{IOC:MC03}")
 
 ## autosave/restore machinery
 save_restoreSet_Debug(0)
@@ -112,4 +112,4 @@ makeAutosaveFiles()
 create_monitor_set("info_positions.req", 5 , "")
 create_monitor_set("info_settings.req", 15 , "")
 
-dbl > "/cf-update/xf23id1-ioc1.mc02.dbl"
+dbl > "/cf-update/xf23id2-ioc3.mc02.dbl"
